@@ -81,9 +81,9 @@ The repository includes `sample_report.json`, a realistic mock SonarQube export 
 git clone https://github.com/Asmasaaif/sonarfix-ai.git
 cd sonarfix-ai
 
-# Set your Anthropic API key
-export ANTHROPIC_API_KEY="your-api-key-here"   # Linux / macOS
-set ANTHROPIC_API_KEY=your-api-key-here         # Windows
+# Set your LLM API key
+export LLM_API_KEY="your-api-key-here"   # Linux / macOS
+set LLM_API_KEY=your-api-key-here         # Windows
 
 # Run against the sample report
 python sonarfix.py sample_report.json
@@ -108,7 +108,7 @@ sonarfix-ai/
 ## Requirements
 
 - Python 3.8 or higher
-- An Anthropic API key (set as the `ANTHROPIC_API_KEY` environment variable)
+- An LLM API key configured as an environment variable
 - No external dependencies — the project uses only Python standard library modules
 
 ---

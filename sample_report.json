@@ -1,0 +1,56 @@
+{
+  "project": "web-application-backend",
+  "scan_date": "2026-03-01",
+  "issues": [
+    {
+      "id": "ISSUE-001",
+      "severity": "CRITICAL",
+      "type": "VULNERABILITY",
+      "rule": "sqli-injection",
+      "file": "src/api/user_controller.py",
+      "line": 42,
+      "message": "User input is directly concatenated into SQL query without sanitization.",
+      "code_snippet": "query = 'SELECT * FROM users WHERE id=' + user_id"
+    },
+    {
+      "id": "ISSUE-002",
+      "severity": "CRITICAL",
+      "type": "VULNERABILITY",
+      "rule": "hardcoded-credentials",
+      "file": "src/config/settings.py",
+      "line": 17,
+      "message": "Hardcoded password found in source code.",
+      "code_snippet": "DB_PASSWORD = 'admin1234'"
+    },
+    {
+      "id": "ISSUE-003",
+      "severity": "MAJOR",
+      "type": "VULNERABILITY",
+      "rule": "missing-auth",
+      "file": "src/api/admin_routes.py",
+      "line": 88,
+      "message": "Sensitive API endpoint accessed without authorization check.",
+      "code_snippet": "@app.route('/admin/delete_user', methods=['POST'])\ndef delete_user():\n    user_id = request.json['id']"
+    },
+    {
+      "id": "ISSUE-004",
+      "severity": "MAJOR",
+      "type": "VULNERABILITY",
+      "rule": "outdated-dependency",
+      "file": "requirements.txt",
+      "line": 5,
+      "message": "Dependency 'requests==2.20.0' has known CVEs. Latest safe version is 2.31.0.",
+      "code_snippet": "requests==2.20.0"
+    },
+    {
+      "id": "ISSUE-005",
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "sensitive-data-log",
+      "file": "src/auth/login.py",
+      "line": 31,
+      "message": "Sensitive user data (email) is being logged in plaintext.",
+      "code_snippet": "print(f'Login attempt: {user_email} at {timestamp}')"
+    }
+  ]
+}

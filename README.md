@@ -19,7 +19,7 @@ SonarQube JSON report
     → Query LLM API
     → Print structured remediation output
     ## Pipeline
-
+```
 ```mermaid
 flowchart TD
     A[SonarQube JSON Report] --> B[Parse Findings]

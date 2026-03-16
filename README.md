@@ -18,8 +18,10 @@ SonarQube JSON report
     → Build context-aware prompt per vulnerability
     → Query LLM API
     → Print structured remediation output
-    ## Pipeline
 ```
+
+## Pipeline
+
 ```mermaid
 flowchart TD
     A[SonarQube JSON Report] --> B[Parse Findings]
@@ -29,8 +31,6 @@ flowchart TD
     E --> F[Generate Remediation Suggestions]
     F --> G[Structured Developer-Friendly Output]
 ```
-
----
 
 ## Example Output
 
